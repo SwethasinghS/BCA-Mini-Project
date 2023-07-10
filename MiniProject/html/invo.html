@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Invoice Generate</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="html2pdf.bundle.min.js"></script>
+
+		<script>
+			function generatePDF() {
+				// Choose the element that our invoice is rendered in.
+				//const element = document.getElementById('invoice');
+				const element = document.getElementById('htmlContent');
+				// Choose the element and save the PDF for our user.
+				html2pdf().from(element).save();
+			}
+		</script>
+
+<style>
+th, td {
+  padding-left: 8px;
+  border : 1px solid #black;
+   
+}
+table {
+    border-collapse: collapse;
+}
+</style>
+
+	</head>
+	<body>
+
+<!------>
+
+<link rel="stylesheet" href="invoice.css">
+<div id="htmlContent" style="padding: 25px">
+  <h2 style="color: #0094ff">Invoice</h2>
+  <!-- <img src="invoice.jpg" align="right" style="width: 70%; max-width: 200px"></img> -->
+    <section class="store-user mt-5">
+           <div class="col-5">
+              <div class="row bb pb-3">
+               <div class="col-2">
+                   <h2>SGS Finance</h2>
+                   <p class="address">Museum Road,<br>Ashok Nagar,<br>Bangalore</p>
+                   <div class="txn mt-2">GST:XXXXXX</div>
+                  </div>
+                  <div class="col-5">
+                  <h2>State Bank of india</h2>
+                      <p class="address">LHO Office<br>Bangalore</p>
+                      <div class="txn mt-2">GST:HGRFT6587O</div>
+                  </div>
+               </div>
+               <div class="row extra-info pt-3">
+                 <div class="col-7">
+                   <p>Payment Method:<span>NEFT</span></p>
+                     <p>Order Number:<span>2024</span></p>
+                   </div>
+                <div class="col-5">
+                   <p>Deliver Date:<span>18-11-2021</span></p>
+                   </div>
+               </div>
+              </div>
+	<BR>
+        <section class="product-area mt-4">
+           <table class="table table-hover" border="1" style="width: 50%; padding: 5px">
+              <thead>
+                <tr bgcolor="gray" align="left">
+                  <th> Client Name</th>
+                    <th>Loan Amount</th>
+                    <th>Commission</th>
+                    <th>Total</th>
+                  </tr>
+               </thead>
+               <tbody>
+                   <td>Shailesh Kumar</td>
+                   <td>75,000,00</td>
+                   <td>0.3%</td>
+                   <td>22500</td>
+               </tbody>
+              </table>
+          </section>
+  <h3>Note:In Words:Twenty Six Thousand Five Hundred and Fifty Only</h3> 
+    <table style="height:auto;width:30%" border="1">  
+    <tbody>  
+      <tr bgcolor="gray" align="left">  
+        <th>Sub Total</th>  
+        <th>22500</th>  
+      </tr>  
+      <tr>  
+        <td>SGST :9%</td>  
+        <td>2025</td>  
+      </tr>  
+      <tr>  
+        <td>IGST :9%</td>  
+        <td>2025</td>  
+      </tr>  
+      <tr>  
+        <td>Total</td>  
+        <td>26550</td>  
+      </tr>  
+    </tbody>  
+  </table>
+<div id="editor"></div>
+<center>
+  <p>
+	  <button onclick="generatePDF()">Generate PDF</button>
+  </p>  
+<footer class="footer text-faded text-center py-5">
+            <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2022</p></div>
+        </footer>
+   </center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!----->
+		
+	</body>
+</html>
